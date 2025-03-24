@@ -1,18 +1,14 @@
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-const Card = ({children, isFeatured, className}) => {
+export const Card = ({ children, isFeatured, className }) => {
   return (
     <div
-      className={
-        `card${isFeatured ? ' card--featured' : ''}${className ? ' ' + className : ''}`
-      }
+      className={`card${isFeatured ? ' card--featured' : ''}${className ? ' ' + className : ''}`}
     >
       {children}
     </div>
   )
 }
-
-export {Card};
 
 Card.propTypes = {
   children: PropTypes.node.isRequired,

@@ -1,26 +1,28 @@
-import PropTypes from 'prop-types';
-import {ReactComponent as Remove} from '../assets/images/icon-remove.svg';
+import PropTypes from 'prop-types'
 
-const Badge = ({
+// import { ReactComponent as Remove } from '../assets/icons/icon-remove.svg'
+import iconRemove from '../assets/icons/icon-remove.svg'
+
+export const Badge = ({
   variant = 'basic',
   colorScheme = 'light',
   children,
   onClear,
   onClick,
 }) => (
-  <div className={`badge badge--${variant} badge--${colorScheme}`} onClick={onClick}>
-    <span>
-      {children}
-    </span>
+  <div
+    className={`badge badge--${variant} badge--${colorScheme}`}
+    onClick={onClick}
+  >
+    <span>{children}</span>
     {variant === 'clearable' && (
-      <div className='badge-remover' onClick={onClear}>
-        <Remove />
+      <div className="badge-remover" onClick={onClear}>
+        {/* <Remove /> */}
+        <img src={iconRemove} alt="icon-remove" />
       </div>
     )}
   </div>
-);
-
-export {Badge};
+)
 
 Badge.propTypes = {
   variant: PropTypes.oneOf(['basic', 'clearable', 'rounded']),

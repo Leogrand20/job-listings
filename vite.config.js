@@ -6,6 +6,7 @@ import htmlTemplate from 'vite-plugin-html-template-mpa'
 import copy from 'vite-plugin-cp'
 import zipPack from 'unplugin-zip-pack/vite'
 import react from '@vitejs/plugin-react'
+import svgr from 'vite-plugin-svgr'
 
 const chunkSize = 1024
 
@@ -65,8 +66,17 @@ export default defineConfig(({ command }) => {
           filter: true,
         }),
 
-        
         react(),
+
+        svgr({
+          svgrOptions: {
+            exportType: 'named',
+            ref: true,
+            svgo: false,
+            titleProp: true,
+          },
+          include: '**/*.svg',
+        }),
       ],
 
       resolve: {

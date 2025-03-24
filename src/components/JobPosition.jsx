@@ -1,9 +1,10 @@
-import PropTypes from 'prop-types';
-import { Badge } from 'UI/Badge';
-import { Card } from 'UI/Card';
-import { Stack } from 'UI/Stack';
+import PropTypes from 'prop-types'
 
-const JobPosition = ({
+import { Badge } from '../UI/Badge'
+import { Card } from '../UI/Card'
+import { Stack } from '../UI/Stack'
+
+export const JobPosition = ({
   id,
   company,
   logo,
@@ -18,19 +19,15 @@ const JobPosition = ({
   languages,
   tools,
 }) => {
-  const badges = [].concat(role, level, ...languages, ...tools);
+  const badges = [].concat(role, level, ...languages, ...tools)
 
   return (
     <Card isFeatured={featured}>
-      <div className='job-position'>
-        <div className='job-position-info'>
-          <img
-            className='job-position-avatar'
-            src={logo}
-            alt={company}
-          />
-          <div className='job-position-body'>
-            <div className='job-postion-company'>
+      <div className="job-position">
+        <div className="job-position-info">
+          <img className="job-position-avatar" src={logo} alt={company} />
+          <div className="job-position-body">
+            <div className="job-postion-company">
               <h3>{company}</h3>
               {(isNew || featured) && (
                 <Stack>
@@ -47,24 +44,16 @@ const JobPosition = ({
                 </Stack>
               )}
             </div>
-            <h2 className='job-position-title'>
-              {position}
-            </h2>
+            <h2 className="job-position-title">{position}</h2>
             <Stack>
-              <div className='job-position-meta'>
-                {postedAt}
-              </div>
-              <div className='job-position-meta'>
-                {contract}
-              </div>
-              <div className='job-position-meta'>
-                {location}
-              </div>
+              <div className="job-position-meta">{postedAt}</div>
+              <div className="job-position-meta">{contract}</div>
+              <div className="job-position-meta">{location}</div>
             </Stack>
           </div>
         </div>
         <Stack>
-          {badges.map(item => (
+          {badges.map((item) => (
             <Badge key={item}>{item}</Badge>
           ))}
         </Stack>
@@ -72,8 +61,6 @@ const JobPosition = ({
     </Card>
   )
 }
-
-export {JobPosition};
 
 JobPosition.propTypes = {
   id: PropTypes.number,
@@ -89,4 +76,4 @@ JobPosition.propTypes = {
   location: PropTypes.string,
   languages: PropTypes.arrayOf(PropTypes.string),
   tools: PropTypes.arrayOf(PropTypes.string),
-};
+}

@@ -38,10 +38,12 @@
     "vite-plugin-cp": "^4.0.8",
     "vite-plugin-html-template-mpa": "^1.0.29",
     "vite-plugin-inspect": "^11.0.0",
-    "vite-plugin-legacy-swc": "^1.2.3"
+    "vite-plugin-legacy-swc": "^1.2.3",
+    "vite-plugin-svgr": "^4.3.0"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
+    "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0"
