@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 
-// import { ReactComponent as Remove } from '../assets/icons/icon-remove.svg'
 import iconRemove from '../assets/icons/icon-remove.svg'
 
 export const Badge = ({
@@ -17,7 +16,6 @@ export const Badge = ({
     <span>{children}</span>
     {variant === 'clearable' && (
       <div className="badge-remover" onClick={onClear}>
-        {/* <Remove /> */}
         <img src={iconRemove} alt="icon-remove" />
       </div>
     )}

@@ -1,10 +1,16 @@
-import data from '../mock/data.json'
+import { useSelector } from 'react-redux'
+
 import { JobPosition } from './JobPosition'
+import { selectPositions } from '../redux/slices/positionsSlice'
 
 export const JobList = () => {
+  const positions = useSelector(selectPositions)
+
+  console.log(positions)
+
   return (
     <div className="job-list">
-      {data.map((item) => (
+      {positions.map((item) => (
         <JobPosition key={item.id} {...item} />
       ))}
     </div>
