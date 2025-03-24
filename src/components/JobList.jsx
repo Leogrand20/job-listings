@@ -6,8 +6,6 @@ import { selectPositions } from '../redux/slices/positionsSlice'
 export const JobList = () => {
   const positions = useSelector(selectPositions)
 
-  console.log(positions)
-
   return (
     <div className="job-list">
       {positions.map((item) => (
