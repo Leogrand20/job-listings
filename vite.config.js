@@ -115,7 +115,20 @@ export default defineConfig(({ command }) => {
         watch: {},
       },
 
-      plugins: [Inspect(), copy(copyTarget), react()],
+      plugins: [
+        Inspect(),
+        copy(copyTarget),
+        react(),
+        svgr({
+          svgrOptions: {
+            exportType: 'named',
+            ref: true,
+            svgo: false,
+            titleProp: true,
+          },
+          include: '**/*.svg',
+        }),
+      ],
 
       resolve: {
         alias,

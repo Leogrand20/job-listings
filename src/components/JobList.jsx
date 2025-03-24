@@ -17,9 +17,9 @@ export const JobList = () => {
     if (!filters.length) return positions
 
     return positions.filter(({ role, level, languages, tools }) => {
-      const filteredPos = [].concat(role, level, ...languages, ...tools)
+      const positionsFilter = [].concat(role, level, ...languages, ...tools)
 
-      return filters.every((filter) => filteredPos.includes(filter))
+      return filters.every((filter) => positionsFilter.includes(filter))
     })
   }
 
