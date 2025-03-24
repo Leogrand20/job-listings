@@ -10,11 +10,15 @@ const filterSlice = createSlice({
 
   reducers: {
     setAddfilter: (state, { payload }) => {
-      state.filters = [...payload]
+      if (!state.filters.includes(payload)) {
+        state.filters.push(payload)
+      } else {
+        state.filters = [...state.filters]
+      }
     },
 
-    setDeleteFilter: (state, { payload }) => {
-      state.filters = state.filters((item) => item !== payload)
+    deleteFilter: (state, { payload }) => {
+      state.filters = state.filters.filter((item) => item !== payload)
     },
 
     resetFilters: (state) => {
@@ -23,8 +27,7 @@ const filterSlice = createSlice({
   },
 })
 
-export const { setAddfilter, setDeleteFilter, resetFilters } =
-  filterSlice.actions
+export const { setAddfilter, deleteFilter, resetFilters } = filterSlice.actions
 
 export const selectFilters = (state) => state.filter.filters
 
