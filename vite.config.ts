@@ -1,17 +1,17 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
+
+import react from '@vitejs/plugin-react-swc'
 import Inspect from 'vite-plugin-inspect'
 import legacy from 'vite-plugin-legacy-swc'
 import htmlTemplate from 'vite-plugin-html-template-mpa'
 import copy from 'vite-plugin-cp'
-import zipPack from 'unplugin-zip-pack/vite'
-import react from '@vitejs/plugin-react'
 import svgr from 'vite-plugin-svgr'
 
 const chunkSize = 1024
 
 const copyTarget = {
-  // targets: [{ src: './src/assets/video', dest: 'dist/assets/video' }],
+  targets: [{ src: './src/assets/video', dest: 'dist/assets/video' }],
 }
 
 const alias = {
@@ -56,14 +56,6 @@ export default defineConfig(({ command }) => {
 
         htmlTemplate({
           minify: true,
-        }),
-
-        zipPack({
-          in: './dist',
-
-          out: 'dist.zip',
-
-          filter: true,
         }),
 
         react(),
