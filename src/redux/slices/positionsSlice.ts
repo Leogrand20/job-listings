@@ -1,6 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-const initialState = {
+import { Positions, PositionsSlice } from '../../types/positions'
+
+const initialState: PositionsSlice = {
   positions: [],
 }
 
@@ -9,14 +11,12 @@ const positionsSlice = createSlice({
   initialState,
 
   reducers: {
-    setPositions: (state, { payload }) => {
+    setPositions: (state, { payload }: PayloadAction<Positions>) => {
       state.positions = [...payload]
     },
   },
 })
 
 export const { setPositions } = positionsSlice.actions
-
-export const selectPositions = (state) => state.positions.positions
 
 export default positionsSlice.reducer
