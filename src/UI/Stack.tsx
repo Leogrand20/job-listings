@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types'
-
 export const Stack = ({ children, pos }) => (
   <div
     className="stack"
@@ -10,7 +8,3 @@ export const Stack = ({ children, pos }) => (
     {children}
   </div>
 )
-
-Stack.propTypes = {
-  children: PropTypes.node.isRequired,
-}

@@ -1,6 +1,8 @@
-import PropTypes from 'prop-types'
+import { FC } from 'react'
 
-export const Card = ({ children, isFeatured, className }) => {
+import { CardProps } from '../types/positions'
+
+export const Card: FC<CardProps> = ({ children, isFeatured, className }) => {
   return (
     <div
       className={`card${isFeatured ? ' card--featured' : ''}${className ? ' ' + className : ''}`}
@@ -8,10 +10,4 @@ export const Card = ({ children, isFeatured, className }) => {
       {children}
     </div>
   )
-}
-
-Card.propTypes = {
-  children: PropTypes.node.isRequired,
-  isFeatured: PropTypes.bool,
-  className: PropTypes.string,
 }

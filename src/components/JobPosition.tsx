@@ -1,11 +1,11 @@
-import PropTypes from 'prop-types'
+import { FC } from 'react'
 
 import { Badge } from '../UI/Badge'
 import { Card } from '../UI/Card'
 import { Stack } from '../UI/Stack'
+import { JobPositionProps } from '../types/positions'
 
-export const JobPosition = ({
-  id,
+export const JobPosition: FC<JobPositionProps> = ({
   company,
   logo,
   new: isNew,
@@ -20,7 +20,9 @@ export const JobPosition = ({
   tools,
   handleAddFilter,
 }) => {
-  const badges = [].concat(role, level, ...languages, ...tools)
+  const languagesFiltered = [...languages]
+  const toolsFiltered = [...tools]
+  const badges = [role, level, ...languagesFiltered, ...toolsFiltered]
 
   return (
     <Card isFeatured={featured}>
@@ -63,21 +65,4 @@ export const JobPosition = ({
       </div>
     </Card>
   )
-}
-
-JobPosition.propTypes = {
-  id: PropTypes.number,
-  company: PropTypes.string,
-  logo: PropTypes.string,
-  new: PropTypes.bool,
-  featured: PropTypes.bool,
-  position: PropTypes.string,
-  role: PropTypes.string,
-  level: PropTypes.string,
-  postedAt: PropTypes.string,
-  contract: PropTypes.string,
-  location: PropTypes.string,
-  languages: PropTypes.arrayOf(PropTypes.string),
-  tools: PropTypes.arrayOf(PropTypes.string),
-  handleAddFilter: PropTypes.func,
 }

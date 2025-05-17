@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types'
-
 import { ReactComponent as Remove } from '@icons/icon-remove.svg'
 
 export const Badge = ({
@@ -21,11 +19,3 @@ export const Badge = ({
     )}
   </div>
 )
-
-Badge.propTypes = {
-  variant: PropTypes.oneOf(['basic', 'clearable', 'rounded']),
-  colorScheme: PropTypes.oneOf(['light', 'primary', 'dark']),
-  children: PropTypes.node.isRequired,
-  onClear: PropTypes.func,
-  onClick: PropTypes.func,
-}

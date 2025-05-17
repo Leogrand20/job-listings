@@ -1,3 +1,5 @@
+import { ReactNode } from "react"
+
 export interface IPosition {
   id: number
   company: string
@@ -18,4 +20,14 @@ export type Positions = IPosition[]
 
 export type PositionsSlice = {
   positions: Positions
+}
+
+export interface JobPositionProps extends IPosition {
+  handleAddFilter: (filter: string) => void
+}
+
+export type CardProps = {
+  isFeatured: IPosition['featured']
+  children: ReactNode
+  className?: string
 }
