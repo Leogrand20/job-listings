@@ -1,4 +1,8 @@
-export const Stack = ({ children, pos }) => (
+import { FC } from 'react'
+
+import { StackProps } from '../types/positions'
+
+export const Stack: FC<StackProps> = ({ children, pos }) => (
   <div
     className="stack"
     style={{

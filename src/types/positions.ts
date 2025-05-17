@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { ReactNode } from 'react'
 
 export interface IPosition {
   id: number
@@ -30,4 +30,9 @@ export type CardProps = {
   isFeatured: IPosition['featured']
   children: ReactNode
   className?: string
+}
+
+export type StackProps = {
+  children: ReactNode
+  pos?: string
 }
