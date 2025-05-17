@@ -4,11 +4,8 @@ import { Badge } from '../UI/Badge'
 import { Card } from '../UI/Card'
 import { Stack } from '../UI/Stack'
 
-import {
-  selectFilters,
-  deleteFilter,
-  resetFilters,
-} from '../redux/slices/filterSlice'
+import { deleteFilter, resetFilters } from '../redux/slices/filterSlice'
+import { selectFilters } from '../redux/selectors/filter-selector'
 
 export const FilterPanel = () => {
   const filters = useSelector(selectFilters)

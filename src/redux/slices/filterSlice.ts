@@ -1,6 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-const initialState = {
+import { FilterSlice } from '../../types/filter'
+
+const initialState: FilterSlice = {
   filters: [],
 }
 
@@ -9,7 +11,7 @@ const filterSlice = createSlice({
   initialState,
 
   reducers: {
-    setAddfilter: (state, { payload }) => {
+    setAddfilter: (state, { payload }: PayloadAction<string>) => {
       if (!state.filters.includes(payload)) {
         state.filters.push(payload)
       } else {
@@ -17,7 +19,7 @@ const filterSlice = createSlice({
       }
     },
 
-    deleteFilter: (state, { payload }) => {
+    deleteFilter: (state, { payload }: PayloadAction<string>) => {
       state.filters = state.filters.filter((item) => item !== payload)
     },
 
@@ -28,7 +30,5 @@ const filterSlice = createSlice({
 })
 
 export const { setAddfilter, deleteFilter, resetFilters } = filterSlice.actions
-
-export const selectFilters = (state) => state.filter.filters
 
 export default filterSlice.reducer
