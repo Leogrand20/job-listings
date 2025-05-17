@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useAppDispatch } from './redux/store'
 
 import { FilterPanel } from './components/FilterPanel'
 import { JobList } from './components/JobList'
@@ -10,11 +10,11 @@ import { setPositions } from './redux/slices/positionsSlice'
 import './App.css'
 
 export const App = () => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
     dispatch(setPositions(data))
-  }, [])
+  }, [dispatch])
 
   return (
     <>

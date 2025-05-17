@@ -27,7 +27,7 @@ export interface JobPositionProps extends IPosition {
 }
 
 export type CardProps = {
-  isFeatured: IPosition['featured']
+  isFeatured?: IPosition['featured']
   children: ReactNode
   className?: string
 }
