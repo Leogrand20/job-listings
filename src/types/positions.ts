@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { MouseEventHandler, ReactNode } from 'react'
 
 export interface IPosition {
   id: number
@@ -35,4 +35,12 @@ export type CardProps = {
 export type StackProps = {
   children: ReactNode
   pos?: string
+}
+
+export type BadgeProps = {
+  children: string
+  variant?: string
+  colorScheme?: string
+  onClear?: MouseEventHandler<HTMLDivElement>
+  onClick?: MouseEventHandler<HTMLDivElement>
 }

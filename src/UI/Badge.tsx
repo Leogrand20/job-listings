@@ -1,6 +1,10 @@
+import { FC } from 'react'
+
 import { ReactComponent as Remove } from '@icons/icon-remove.svg'
 
-export const Badge = ({
+import { BadgeProps } from '../types/positions'
+
+export const Badge: FC<BadgeProps> = ({
   variant = 'basic',
   colorScheme = 'light',
   children,
