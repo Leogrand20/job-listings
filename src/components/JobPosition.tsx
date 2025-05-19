@@ -1,9 +1,9 @@
 import { FC } from 'react'
 
+import { JobPositionProps } from '../types/positions'
 import { Badge } from '../UI/Badge'
 import { Card } from '../UI/Card'
 import { Stack } from '../UI/Stack'
-import { JobPositionProps } from '../types/positions'
 
 export const JobPosition: FC<JobPositionProps> = ({
   company,

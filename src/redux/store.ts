@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { useDispatch, useSelector } from 'react-redux'
 
-import positionsReducer from './slices/positionsSlice'
 import filterReducer from './slices/filterSlice'
+import positionsReducer from './slices/positionsSlice'
 
 export const store = configureStore({
   reducer: {

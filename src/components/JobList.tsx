@@ -1,9 +1,9 @@
-import { useAppDispatch, useAppSelector } from '../redux/store'
-import { JobPosition } from './JobPosition'
+import { selectFilters } from '../redux/selectors/filter-selector'
 import { selectPositions } from '../redux/selectors/positions-selector'
 import { setAddfilter } from '../redux/slices/filterSlice'
-import { selectFilters } from '../redux/selectors/filter-selector'
+import { useAppDispatch, useAppSelector } from '../redux/store'
 import { Positions } from '../types/positions'
+import { JobPosition } from './JobPosition'
 
 export const JobList = () => {
   const positions = useAppSelector(selectPositions)
